@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="w-6/12 max-w-[1200px] mx-auto bg-[#f1f1f1] shadow-lg mt-10">
+        <div class="flex flex-col items-center justify-center p-5">
+            <h1 class="serif text-[#333] text-3xl">Sticky Notes</h1>
+            <div id="notesContainer" class="w-full grid grid-cols-3 gap-4 mt-5">
+                <!-- Notes will be dynamically added here -->
+                
+            </div>
+            <div id="addArea" class="bg-[#fefec0] mt-2">
+                <textarea class="bg-[#fefec0] outline-none resize-none p-3" name="notes" id="notes" placeholder="Type a new note..."></textarea>
+                <button id="addNote" class="text-[#11ff00] p-2">+</button>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="index.js"></script>
+</html>

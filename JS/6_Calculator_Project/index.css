@@ -1,0 +1,40 @@
+body{
+    background: #ecf0f1;
+    font-family: Helvetica;
+    color: #2d2d2d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.calcu{
+    background: snow;
+}
+.grid-container{
+    display: flex;
+    gap: 4px 4px;
+    margin: 20px auto;
+    max-width: 400px;
+}
+.numbers{
+    display: grid;
+    grid-template-columns: repeat(3,60px);
+    grid-template-rows: repeat(4,60px);
+    gap: 2px 2px;
+}
+.operators{
+    display: grid;
+    grid-template-columns: repeat(2,60px);
+    grid-template-rows: repeat(4,60px);
+    gap: 2px 2px;
+}
+.cell{
+    border: 2px solid gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+}
+.operators > .cell {
+    background: palevioletred;
+}

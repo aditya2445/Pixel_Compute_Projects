@@ -1,0 +1,39 @@
+#grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 200px; 
+    max-width: 1000px;
+    margin: auto;
+    overflow: hidden; 
+    height: auto;
+    transition: height 0.5s ease; 
+    gap: 10px;
+  }
+  
+  .cell {
+    border: 2px solid gray;
+    padding: 10px 10px;
+    overflow: hidden;
+  }
+  
+  #grid-container > div:nth-child(1) {
+    grid-column: 1 / -1;
+  }
+  
+  .cell::after {
+    content: "...";
+    display: block;
+    color: black;
+  }
+  
+  .heading{
+    text-align: left;
+    align-items: flex-start;
+  }
+
+  .buttons > button{
+    background: rgb(206, 204, 204);
+    border: 2px solid black;
+    padding: 4px;
+    border-radius: 5px;
+  }

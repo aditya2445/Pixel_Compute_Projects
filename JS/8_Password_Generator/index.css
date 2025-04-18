@@ -1,0 +1,22 @@
+body{
+    background: url(https://ik.imagekit.io/d9mvewbju/BBA-NeetoSite-and-Project-Resources/password-generator-container_tarSlyutN.png?updatedAt=1730755103984);
+    font-family: Arial, Helvetica, sans-serif;
+    overflow: hidden;
+}
+
+ul{
+    list-style: disc;
+    list-style-position: outside;
+}
+
+.btn:hover{
+    transform: scale(1.01);
+}
+
+.bgGreen{
+    background-color: green;
+}
+
+.bgRed{
+    background-color: red;
+}

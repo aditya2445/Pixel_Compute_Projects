@@ -1,0 +1,46 @@
+.body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f7f8fc;
+    color: #333;
+    overflow: hidden;
+}
+
+.edit{
+    padding: 2px 2px;
+    background-color: yellow;
+    align-self: flex-end;
+    border-radius: 5px;
+    padding: 8px;
+    font: bold;
+}
+
+.delete{
+    padding: 2px 2px;
+    background-color: red;
+    align-self: flex-end;
+    border-radius: 5px;
+    padding: 8px;
+    color: white;
+    font: bold;
+}
+
+.task{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    border-bottom: 2px solid #ddd;
+    padding: 10px;
+}
+
+.overflow{
+    overflow: hidden;
+}
+
+.scroll{
+    overflow-y: scroll;
+}
+
+.task p:first-of-type,.task p>span{
+    font-size: larger;
+    font-weight: bold;
+}

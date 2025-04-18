@@ -1,0 +1,24 @@
+.body{
+    background-image: url('./assets/bgImg.png');
+}
+
+.grid-container{
+    display: grid;
+    grid-template-columns: repeat(3,80px);
+    grid-template-rows: repeat(3,80px);
+    gap: 5px;
+    margin: 20px auto;
+    width: max-content;
+}
+
+.cell{
+    border: 2px solid snow;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    font-weight: bold;
+    color: #333;
+}
+

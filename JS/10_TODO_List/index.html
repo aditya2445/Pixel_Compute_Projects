@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="relative h-[100vh] body flex justify-center items-center overflow-hidden">
+    <!-- Modal Overlay -->
+    <div id="modal" class="absolute inset-0 z-50 flex justify-center items-center bg-black/30 backdrop-blur-sm hidden">
+        <div class="bg-white p-4 rounded-md shadow-lg w-96">
+            <div id="cross" class="text-right cursor-pointer font-bold text-gray-500 hover:text-red-500">X</div>
+            <div class="text-center mt-2">
+                <p class="mb-4 text-gray-700">Please fill in all fields.</p>
+                <button id="closeBtn" class="bg-blue-500 text-white px-4 py-1 rounded-md">OK</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="bg-white w-6/12 max-h-[90vh] p-4 mx-auto flex flex-col justify-start items-center overflow-hidden">
+        <!-- Header -->
+        <div class="bg-[#3f51b5] flex justify-between w-full p-2 rounded-md">
+            <h1 class="text-2xl font-bold text-white">To-Do-List</h1>
+            <input type="text" name="search" id="search" placeholder="Search Tasks..." class="bg-white border focus:outline-none w-1/2 p-2 rounded-md">
+        </div>
+
+        <!-- Input Fields -->
+        <div class="mt-2 bg-white flex items-center justify-evenly p-2 mb-2 rounded-md shadow-xl w-full">
+            <input class="border p-1 rounded-md" type="text" id="taskInput" placeholder="Add your task here" required>
+            <input class="border rounded-md p-1" type="date" name="date" id="dateInput" required>
+            <input class="border rounded-md p-1" type="time" name="time" id="timeInput" required>
+            <button class="bg-green-600 rounded-md p-2 text-white text-sm" id="add">Add Task</button>
+        </div>
+
+        <!-- Scrollable Task Lists -->
+        <div class="flex-1 overflow-y-auto w-full mb-2 px-1">
+            <div id="dueTasks" class="mb-4">
+                <h1 class="text-[#3f51b5] font-bold text-2xl mb-2">Due Tasks</h1>
+            </div>
+            <div id="upcomingTasks">
+                <h1 class="text-2xl font-bold text-[#3f51b5] mb-2">Upcoming Tasks</h1>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script src="index.js"></script>
+</html>

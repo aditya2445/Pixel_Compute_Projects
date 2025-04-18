@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="h-[100vh] relative">
+    <div class="w-8/12 mx-auto mt-40 p-4 flex flex-col justify-center items-center bg-white">
+        <h1 class="text-2xl font-bold">Password Generator</h1>
+        <div class="bg-[#f4f4f4] mt-4 mb-4 p-4 flex gap-2 w-9/12 mx-auto justify-between items-center">
+            <input class="w-[70%] outline-none border-none" type="text" name="password" id="password">
+            <button id="copyButton" class="p-2 font-bold text-md border bg-green-500 btn transition transition-all rounded-md">Copy Password</button>
+        </div>
+        <div>
+            <p class="mt-4">Use the slider, and select from the options below to lengthen your password and strengthen you security</p>
+            <div class="flex gap-2 mb-2">
+                <p>Password length (6-64) Total Characters: </p>
+                <input type="range" name="range" id="range" min="6" max="64">
+                <p id="sliderValue">
+                    20
+                </p>
+            </div>
+            <div class="flex gap-6 justify-center items-center">
+                <div>
+                    <input type="checkbox" name="numbers" id="numbers">
+                    Include Numbers
+                </div>
+                <div>
+                    <input type="checkbox" name="letters" id="letters">
+                    Include Letters
+                </div>
+                <div>
+                    <input type="checkbox" name="mixedCase" id="mixedCase">
+                    Include Mixed Case
+                </div>
+                <div>
+                    <input type="checkbox" name="punctuation" id="punctuation">
+                    Include Punctuation
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="w-8/12 mx-auto mt-4 p-4 flex justify-evenly gap-4">
+        <div class="w-[60%]">
+            <p class="font-bold mb-2">Do you any of these weak passwords?</p>
+            <ul class="ul">
+                <li>Password</li>
+                <li>123456</li>
+                <li>Qwerty</li>
+                <li>Your child's name</li>
+                <li>I always use the same password</li>
+            </ul>
+        </div>
+        <div class="w-[40%]">
+            <p class="font-bold mb-2">Why are those passwords are weak?</p>
+            <ul class="ul">
+                <li>They're easy to guess or crack.Really easy!</li>
+                <li>if one of your logins is compromised, a hacker then has access to all your services</li>
+            </ul>
+        </div>
+    </div>
+    <div id="copyStatus" class="w-fit absolute text-white p-3 ml-2 rounded-sm left-0">
+        
+    </div>
+</body>
+<script src="index.js"></script>
+</html>
