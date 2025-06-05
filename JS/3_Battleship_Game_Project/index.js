@@ -1,53 +1,63 @@
-const list = document.getElementsByClassName("cell");
-let arr = Array.from(list);
+const shipImage = 'https://ik.imagekit.io/d9mvewbju/Course/BigbinaryAcademy/battleship-image_e6bWCZ1w4.png';
+const waterImage = 'https://ik.imagekit.io/d9mvewbju/Course/BigbinaryAcademy/seamless-pattern-waves-various-shades-blue-vector-underwater-design-96891651_aSd5pmbaM.webp';
+let boxes = document.querySelectorAll('.box');
+let resetButton = document.querySelector('#resetButton');
+let shipCount = 0;
+let totalClicks = 0;
 
-let images = document.querySelectorAll(".cell img");
-
-let i = 0;
-let set = new Set();
-
-// Randomly select 5 unique indices to place battleships
-while (i < 5) {
-    let ind = Math.floor(Math.random() * arr.length);
-    if (!set.has(ind)) {
-        set.add(ind);
-        images[ind].src = "assets/battleship.png"; // replace the water image with battleship
-        images[ind].classList.add("battleship");
-        i++;
+function generateRandomShips() {
+    let randomIndices = [];
+    while (randomIndices.length < 5) {
+        let temp = Math.floor(Math.random() * 16);
+        if (!randomIndices.includes(temp)) {
+            randomIndices.push(temp);
+        }
     }
-}
-
-let water = 0;
-let battleship = 0;
-let count = 0;
-
-arr.forEach((cell, ind) => {
-    cell.addEventListener("click", (e) => {
-        if(count === 8) {
-            console.log("Lost 💀");
-            return;
+    boxes.forEach((box, idx) => {
+        if (randomIndices.includes(idx)) {
+            box.dataset.ship = true;
+        } else {
+            box.dataset.ship = false;
         }
-        let img = cell.querySelector("img");
-        if(img.classList.contains("revealed")) {
-            return;
-        }
-        count++;
-        if (!img.classList.contains("revealed")) {
-            img.classList.remove("hidden"); // Remove hidden class
-            img.classList.add("revealed");  // Mark as revealed
-            count++;
-
-            if (img.classList.contains("battleship")) {
-                battleship++;
-                if (battleship === 5) {
-                    console.log("Won 🏆");
-                }
-            } else {
-                water++;
-                if (count - battleship === 8) { // 8 wrong clicks
-                    console.log("Lost 💀");
-                }
-            }
-        }
+        box.style.backgroundImage = 'none';
     });
-});
+}
+function handleBoxClick(event) {
+    const box = event.target;
+    totalClicks++;
+    console.log(`Total clicks: ${totalClicks}`);
+    if (totalClicks > 8) {
+        alert(`You exceeded max clicks. Game over!`);
+        boxes.forEach((box) => {
+            if (box.dataset.ship === 'true') {
+                box.style.backgroundImage = `url(${shipImage})`;
+            } else {
+                box.style.backgroundImage = `url(${waterImage})`;
+            }
+        });
+        boxes.forEach(box => box.removeEventListener('click', handleBoxClick));
+        return;
+    }
+    if (box.dataset.ship === 'true') {
+        box.style.backgroundImage = `url(${shipImage})`;
+        shipCount++;
+        if (shipCount === 5 && totalClicks <= 8) {
+            alert('Congratulations! You won!');
+            boxes.forEach(box => box.removeEventListener('click', handleBoxClick));
+        }
+    } else {
+        box.style.backgroundImage = `url(${waterImage})`;
+    }
+    box.removeEventListener('click', handleBoxClick);
+}
+function resetGame() {
+    boxes.forEach(box => {
+        box.style.backgroundImage = 'none';
+        box.addEventListener('click', handleBoxClick);
+    });
+    shipCount = 0;
+    totalClicks = 0;
+    generateRandomShips();
+}
+boxes.forEach(box => box.addEventListener('click', handleBoxClick));
+resetButton.addEventListener('click', resetGame);

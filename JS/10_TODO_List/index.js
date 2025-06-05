@@ -13,23 +13,22 @@ function isDateToday(dateString) {
 }
 
 function initializeArrays(){
-    let dueTasks = JSON.parse(localStorage.getItem(0))
-    let upcomingTasks = JSON.parse(localStorage.getItem(1))
+    let dueTasks = JSON.parse(localStorage.getItem(0) || "[]");
+    let upcomingTasks = JSON.parse(localStorage.getItem(1) || "[]");
+
     dueTasks.forEach(element => {
-        const date = element.date;
-        const title = element.title;
-        const time = element.time;
-        const task = createTaskElement(date,title,time);
+        const { date, title, time } = element;
+        const task = createTaskElement(date, title, time);
         dueContainer.appendChild(task);
     });
+
     upcomingTasks.forEach(element => {
-        const date = element.date;
-        const title = element.title;
-        const time = element.time;
-        const task = createTaskElement(date,title,time);
+        const { date, title, time } = element;
+        const task = createTaskElement(date, title, time);
         upcomingContainer.appendChild(task);
     });
 }
+
 initializeArrays();
 
 function createTaskElement(dateInput, titleInput, timeInput) {
