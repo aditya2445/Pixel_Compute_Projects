@@ -1,88 +1,188 @@
-body{
-    margin: 0px;
-    padding: 0px;
-    color: white;
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
 }
 
-#container{
-    height: 100vh;
-    width: 100vw;
-    display: flex;
-    background-color: #0a192f;
+body {
+  display: flex;
+  background-color: #0c1117;
+  color: white;
 }
 
-#sidebar{
-    width: 20%;
+/* Sidebar */
+.sidebar {
+  width: 250px;
+  background: #10141c;
+  padding: 20px;
+  text-align: center;
+  height: 100vh;
 }
 
-#content{
-    width: 80%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    /* align-items: center; */
-    font-family: "Lato";
+.sidebar img {
+  width: 100px;
+  border-radius: 50%;
+}
+.profile {
+  background-color: #1295c4;
+  border-radius: 10px 0 0 0;
+  padding: 20px 5px;
+  margin: 0 0 20px 0;
+}
+nav ul li {
+  padding: 15px 0;
+}
+nav ul li:hover {
+  background-color: #1295c4;
+  border-radius: 10px;
+}
+.email,
+.github,
+.linkedin {
+  filter: invert(1) brightness(2);
+  width: 5px;
+  /* height: 10px; */
 }
 
-#header h1{
-    font-weight: bold;
+.sidebar h2 {
+  margin: 10px 0;
+  font-size: 18px;
 }
 
-#myWork{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
+.sidebar nav ul {
+  list-style: none;
+  padding: 0;
 }
 
-#myWork h2{
-    font-weight: bold;
-    align-self: start;
+.sidebar nav ul li {
+  margin: 10px 0;
 }
 
-#projects{
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
-    align-self: flex-start;
+.sidebar nav ul li a {
+  color: #ccc;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s;
 }
 
-.project{
-    display: flex;
-    gap: 20px;
-    background-color: #0c2f3d;
-    padding: 10px;
-    width: 600px;
-    /* align-self: flex-start; */
+.sidebar nav ul li a:hover {
+  color: #facc15;
 }
 
-.project #projectImage{
-    width: 20%;
-    background-color: #0a192f;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.social-links {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
 }
 
-.project #projectImage img{
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-    border-radius: 10px;
-    background-color: black;
+.social-links a {
+  margin: 0 5px;
+  font-size: 20px;
+  color: #ccc;
+  text-decoration: none;
 }
 
-.project div{
-    width: 80%;
+/* Main Content */
+.content {
+  flex: 1;
+  padding: 40px;
+}
+.hello {
+  color: yellow;
 }
 
-#viewAll{
-    background-color: transparent;
-    border: 2px solid yellowgreen;
-    color: yellowgreen;
-    padding: 6px;
-    margin-top: 10px;
-    align-self: baseline;
-    margin-left: 250px;
+h1 {
+  font-size: 32px;
+  margin: 10px 0;
+  color: white;
+}
+
+h2 {
+  font-size: 24px;
+  margin: 20px 0;
+}
+
+/* Work Section */
+
+.work,
+.writings,
+.contact {
+  margin-bottom: 40px;
+  text-align: center;
+}
+.projects{
+  display: flex;
+  flex-direction: column;
+}
+.project-card img{
+  height: 200px;
+  width: 10%;
+  max-width: 300px;
+}
+.projects,
+.articles {
+  display: flex;
+  gap: 20px;
+}
+.project-card{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-evenly;
+}
+.project-card,
+.article-card {
+  background: #1a1f2a;
+  padding: 15px;
+  border-radius: 10px;
+  width: 100%;
+}
+.project-details{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.project-card img,
+.article-card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.project-card h3,
+.article-card h3 {
+  margin: 10px 0;
+}
+
+.project-card a {
+  text-decoration: none;
+  color: #facc15;
+}
+
+.view-all,
+.book-session {
+  background-color: transparent;
+  color: #facc15;
+  border: 1px solid #facc15;
+  padding: 10px 20px;
+
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+.blog-img{
+  height: 200px;
+  width: 10%;
+  max-width: 300px;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  margin-top: 20px;
+  border-top: 1px solid grey;
+  padding: 10px;
+  font-size: 12px;
 }

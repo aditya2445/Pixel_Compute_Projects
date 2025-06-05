@@ -1,53 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="index.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
-</head>
-<body>
-    <div id="container">
-        <div id="sidebar">
-            sidebar
-        </div>
-        <div id="content">
-            <div id="header">
-                <p>Hello my name is aditya</p>
-                <h1>I code beautiful websites.</h1>
-                <p>i'm a full stack web developer based out of india to my portfolio!</p>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio - Aditya Mohaty</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <aside class="sidebar">
+      <div class="profile">
+        <img
+          src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
+          alt="Aditya Mohaty"
+        />
+        <h2>Aditya Mohaty</h2>
+        <p>Web Developer</p>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#">1.0 INTRO</a></li>
+          <li><a href="#">2.0 WORK</a></li>
+          <li><a href="#">3.0 WRITINGS</a></li>
+          <li><a href="#">4.0 CONTACT</a></li>
+        </ul>
+      </nav>
+      <div class="social-links">
+        <a  href="#"><img class="email" src="email.png" alt=""></a>
+        <a href="#"><img class="github" src="github.png" alt=""></a>
+        <a href="#"><img class="linkedin" src="linkedin.png" alt=""></a>
+      </div>
+    </aside>
+    <main class="content">
+      <p class="hello">Hello 👋 my name is Ankit</p>
+      <h1>I code beautiful websites.</h1>
+      <p>
+        I'm a full-stack web developer based in India. Welcome to my portfolio!
+      </p>
+      <section class="work">
+        <h2>My work</h2>
+        <div class="projects">
+          <div class="project-card">
+            <img src="https://www.cbc.ca/kids/images/battleship_thumbnail.jpg" alt="Battleship Game" />
+            <div class="project-details">
+
+              <h3>Battleship Game</h3>
+              <p>
+                The classic battleship game built with HTML, CSS, and JavaScript.
+              </p>
+              <a href="#">View the neetocode ↗</a>
             </div>
-            <div id="myWork">
-                <h2 style="text-align: left;">My Work</h2>
-                <div id="projects">
-                    <div class="project">
-                        <div id="projectImage">
-                            <img src="https://media.istockphoto.com/id/639542636/photo/childrens-battleship-paper-game-for-two-players.jpg?s=612x612&w=0&k=20&c=hgl5NQy1ILlqh7PdCSzzB_FdDoyMwoqKDFFOyplaWcw=" alt="">
-                        </div>
-                        <div>
-                            <p>Battleship Game</p>
-                            <p>The classic Battleship game that's written using HTML,CSS and vanila JS,Give it a go!</p>
-                            <a href="">View in neetocode</a>
-                        </div>
-                    </div>
-                    <div class="project">
-                        <div id="projectImage">
-                            <img src="https://themindstudios.com/blog/content/images/2022/10/Cover---How-to-Create-a-Music-Streaming-App-Like-Spotify-in-2023.png" alt="">
-                        </div>
-                        <div>
-                            <p>Music Streaming App</p>
-                            <p>A music streaming app that's written using HTML,CSS and vanila JS,Give it a go!</p>
-                            <a href="">View in neetocode</a>
-                        </div>
-                    </div>
-                </div>
-                <button id="viewAll">VIEW ALL</button>
+          </div>
+          <div class="project-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqzGMLZ0wtLwmkd2uNOd4xPU2qLOF07YAMEg&s" alt="Music Streaming App" />
+            <div class="project-details"> 
+
+              <h3>Music Streaming App</h3>
+              <p>A music streaming app built using ReactJS and MongoDB.</p>
+              <a href="#">View the neetocode ↗</a>
             </div>
+          </div>
         </div>
-        
-    </div>
-</body>
+        <button class="view-all">VIEW ALL</button>
+      </section>
+      <section class="writings">
+        <h2>Writings</h2>
+        <div class="articles">
+          <div class="article-card">
+            <img class="blog-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOePns_42vDM5n8oa_AdRfN6LT3m0ET8hHow&s" alt="Typography" />
+            <h3>My top 10 go-to typefaces</h3>
+            <p>Read Article →</p>
+          </div>
+          <div class="article-card">
+            <img class="blog-img" src="https://media.istockphoto.com/id/480187760/photo/female-novelist-writing-on-the-laptop.jpg?s=612x612&w=0&k=20&c=xcmnzlkoTIE00DX8MvuRZPAKCNV8-gxBBVcZNJRq_uU=" alt="Color Palettes" />
+            <h3>Color palettes that I cannot live without</h3>
+            <p>Read Article →</p>
+          </div>
+        </div>
+        <button class="view-all">VIEW ALL</button>
+      </section>
+      <section class="contact">
+        <h2>Get in touch with me</h2>
+        <p>Have an opportunity for me? Feel free to schedule a call with me.</p>
+        <button class="book-session">BOOK A SESSION</button>
+      </section>
+      <footer>
+        <p>© 2024 Aditya Mohaty</p>
+      </footer>
+    </main>
+  </body>
 </html>
